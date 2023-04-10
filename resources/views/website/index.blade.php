@@ -20,26 +20,60 @@
             <!-- form card-->
             <div class="card custom-card w-100 mb-2">
               <div class="card-body">
-                  <form id="registrationSave" class="registrationSave" enctype="multipart/form-data">
-
+                  <form id="registrationSave" class="registrationSave" >
+                    <!-- First Row -->
                     <div class="row">
-                      <div class="col-md-4 col-12 align-self-center">
-                          <label for="" class="form-label">Applicant's Name </label>
+                      <div class="col-md-6 col-12">
+                          <div class="row">
+                              <div class="col-3 align-self-center">
+                                <label for="" class="form-label">Class</label>
+                            </div>
+                            <div class="col-9">
+                                <input class="form-control form-control-sm custom-form-control" type="text" placeholder="Type Class" name="class" id="class">
+                                <strong><span class="text-danger" id="classError"></span></strong>
+                            </div>
+                          </div>
                       </div>
-                      <div class="col-md-8 col-12">
-                          <input class="form-control form-control-sm custom-form-control" type="text" placeholder="Applicant's Name" name="name" id="name">
-                          <strong><span class="text-danger" id="nameError"></span></strong>
-                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="row">
+                          <div class="col-3 align-self-center">
+                            <label for="" class="form-label">Name</label>
+                          </div>
+                          <div class="col-9">
+                              <input class="form-control form-control-sm custom-form-control" type="text" placeholder="Type Name " name="name" id="name">
+                              <strong><span class="text-danger" id="nameError"></span></strong>
+                          </div>
+                        </div>
+                      </div>                     
                     </div>
-
+                    <!-- Second Row -->
                     <div class="row mt-1">
-                      <div class="col-md-4 col-12 align-self-center">
-                          <label for="" class="form-label">Email Address</label>
+                      <div class="col-md-6 col-12">
+                          <div class="row">
+                              <div class="col-3 align-self-center">
+                              <label for="" class="form-label">Email</label>
+                            </div>
+                            <div class="col-9">
+                              <input class="form-control form-control-sm custom-form-control" type="email" placeholder="Type Email" name="email" id="email">
+                              <strong><span class="text-danger" id="emailError"></span></strong>
+                            </div>
+                          </div>
                       </div>
-                      <div class="col-md-8 col-12">
-                          <input class="form-control form-control-sm custom-form-control" type="email" placeholder="Email Address" name="email" id="email">
-                          <strong><span class="text-danger" id="emailError"></span></strong>
-                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="row">
+                          <div class="col-3 align-self-center">
+                          <label for="" class="form-label">Status</label>
+                          </div>
+                          <div class="col-9">
+                            <select class="form-control form-control-sm custom-form-control" name="status" id="status">
+                              <option value="unconfirmed" selected>Unconfirmed</option>
+                              <option value="admitted">Admitted</option>
+                              <option value="terminated">Terminated</option>
+                            </select>
+                            <strong><span class="text-danger" id="statusError"></span></strong>
+                          </div>
+                        </div>
+                      </div>                     
                     </div>
 
                     <div class="row mt-1">

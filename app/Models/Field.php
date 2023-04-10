@@ -10,7 +10,7 @@ class Field extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'type', 'value'];
+    protected $fillable = ['student_id','title', 'type', 'value'];
     
     public function student()
     {
