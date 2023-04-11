@@ -88,17 +88,10 @@
     <!--Notice Scrolling -->
     <section style="position: fixed;bottom:0px;left:0px;right:0px">
         <div class="alert alert-primary w-100 py-1 my-0" role="alert">
-            <strong>N.B: username :</strong> rana, <strong>password :</strong> 123321   (Before update password)
+            <strong>N.B: username :</strong> 01777664786, <strong>password :</strong> 123321   (Before update password)
         </div>                   
     </section>
     <!-- Close notice Scrolling -->
 
-
-  <!-- bootstrap js -->
-  <script src="{{ asset('website/js/bootstrap.bundle.min.js') }}"></script>
-  <!-- jquery -->
-  <script src="{{ asset('website/js/jquery.min.js') }}"></script>
-  <!-- font awsome -->
-  <script src="{{ asset('website/js/all.min.js') }}"></script>
 </body>
 </html>

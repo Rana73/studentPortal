@@ -30,7 +30,6 @@ class StudentSeeder extends Seeder
                      $item['student_id'] = $student_data->id;
                      $field_data = [];
                      $field_data['title'] = $item['title'];
-                     $field_data['type'] = $item['type'];
                      $field_data['student_id'] = $student_data->id;
                      Field::updateOrCreate($field_data,$item);
                  }

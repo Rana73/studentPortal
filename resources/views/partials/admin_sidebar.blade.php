@@ -13,9 +13,7 @@
                     Dashboard
                 </a>
 
-  
-
-                <a class="nav-link {{ $prefix == 'setup' ? '' : 'collapsed' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="{($prefix == 'product')?'true':'false'}}" aria-controls="collapseLayouts">
+                <a class="nav-link {{ $prefix == 'setup' ? '' : 'collapsed' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="{($prefix == 'setup')?'true':'false'}}" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-wrench"></i></div>
                         Setup Panel
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -23,7 +21,7 @@
 
                 <div class="collapse {{ $prefix == 'setup' ? 'collapse show' : '' }}" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                       
+                    <a class="nav-link {{ $route == 'custom-field.index' ? 'active' : '' }}" href="{{ route('custom-field.index') }}"><i class="fas fa-angle-right"></i>&nbsp;institute List</a>
                         
                     </nav>
                 </div>

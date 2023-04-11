@@ -1,0 +1,26 @@
+[
+    {
+        "institute_id":"1", "title": "Date of Birth", "type": "date", "status": "1"
+    },
+    {
+        "institute_id":"1", "title": "Blood Group", "type": "text", "status": "1"
+    },
+    {
+        "institute_id":"1", "title": "Family Numbers", "type": "number", "status": "1"
+    },
+    {
+        "institute_id":"1", "title": "Physically Disabled", "type": "boolean", "status": "1"
+    },
+    {
+        "institute_id":"2", "title": "Date of Birth", "type": "date", "status": "1"
+    },
+    {
+        "institute_id":"2", "title": "Blood Group", "type": "text", "status": "1"
+    },
+    {
+        "institute_id":"2", "title": "Family Numbers", "type": "number", "status": "1"
+    },
+    {
+        "institute_id":"2", "title": "Physically Disabled", "type": "boolean", "status": "1"
+    }
+]

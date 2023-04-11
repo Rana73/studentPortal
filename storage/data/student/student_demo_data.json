@@ -2,17 +2,17 @@
     {
         "class": "class - 18", "name": "Md Rana Miah", "email": "mahmudrana21@gmail.com","phone": "01777664786", "status": "1",
         "fields":[
-            { "title": "Shift", "type": "string", "value": "2nd"},
-            { "title": "Birth_Date", "type": "date", "value": "14-11-1997"},  
-            { "title": "Admission_Date", "type": "date", "value": "01-01-2020"}  
+            { "title": "Shift", "value": "2nd"},
+            { "title": "Birth_Date", "value": "14-11-1997"},  
+            { "title": "Admission_Date", "value": "01-01-2020"}  
         ]
     },
     {
         "class": "class - 13", "name": "Eithe Akter", "email": "eithe@gmail.com", "phone": "01309929514", "status": "2",
         "fields":[
-            { "title": "Shift", "type": "string", "value": "2nd"},
-            { "title": "Birth_Date", "type": "date", "value": "14-11-2003"},  
-            { "title": "Admission_Date", "type": "date", "value": "01-01-2020"}  
+            { "title": "Shift", "value": "2nd"},
+            { "title": "Birth_Date", "value": "14-11-2003"},  
+            { "title": "Admission_Date", "value": "01-01-2020"}  
         ]
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\InstituteController;
+use App\Http\Controllers\Admin\CustomFieldController;
 use App\Http\Controllers\Admin\AuthInstituteController;
 
 //Home route
@@ -26,7 +27,7 @@ Route::group(['middleware' => ['auth:institute']] , function(){
             Route::post('/password/update', [InstituteController::class, 'passwordUpdate'])->name('password.update');
     });
 
-    Route::prefix('applicant')->group(function(){
+    Route::prefix('institute')->group(function(){
         Route::get('/application-list', [ApplicantController::class, 'index'])->name('applicant.index');
         Route::post('/search-applicant', [ApplicantController::class, 'searchResult'])->name('search.applicant');
         Route::post('applicant-update',[ApplicantController::class,'updateRegistration'])->name('applicant.update');
@@ -35,12 +36,12 @@ Route::group(['middleware' => ['auth:institute']] , function(){
     });
 
     Route::prefix('setup')->group(function(){
-        //Exam CRUD Route
-        Route::get('/exam-entry', [ExamController::class, 'index'])->name('exam.index');
-        Route::post('/exam-store', [ExamController::class, 'store'])->name('exam.store');
-        Route::put('/exam-update/{id}',[ExamController::class,'update'])->name('exam.update');
-        Route::get('/edit-exam/{id}',[ExamController::class,'edit'])->name('exam.edit');
-        Route::delete('/exam-delete/{id}',[ExamController::class,'destroy'])->name('exam.destroy');
+        //Add Custom Field in Institute CRUD Route
+        Route::get('/custom-field-entry', [CustomFieldController::class, 'index'])->name('custom-field.index');
+        Route::post('/custom-field-store', [CustomFieldController::class, 'store'])->name('custom-field.store');
+        Route::put('/custom-field-update/{id}',[CustomFieldController::class,'update'])->name('custom-field.update');
+        Route::get('/edit-custom-field/{id}',[CustomFieldController::class,'edit'])->name('custom-field.edit');
+        Route::delete('/custom-field-delete/{id}',[CustomFieldController::class,'destroy'])->name('custom-field.destroy');
 
 
     });
