@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="{{ asset('website/css/bootstrap.min.css') }}">
     <!-- custom css -->
     <link rel="stylesheet" href="{{ asset('admin/css/login.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>  
 
@@ -80,11 +77,7 @@
             </div>
         </div>
     </section>
-
-    <section>
-        
-    </section>
-
+    
     <!--Notice Scrolling -->
     <section style="position: fixed;bottom:0px;left:0px;right:0px">
         <div class="alert alert-primary w-100 py-1 my-0" role="alert">
@@ -92,6 +85,5 @@
         </div>                   
     </section>
     <!-- Close notice Scrolling -->
-
 </body>
 </html>

@@ -1,11 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'Create User')
+@section('title', 'Update Password')
 @section('admin-content')
     <main>
         <div class="container ">
             <div class="heading-title p-2 my-2">
-                <span class="my-3 heading "><i class="fas fa-home"></i> <a class=""
-                        href="{{ route('dashboard') }}">Home</a> > <a href="#"> user </a> > Update Password</span>
+                <span class="my-3 heading "><i class="fas fa-home"></i> <a class="" href="{{ route('dashboard') }}">Home</a> > <a href="#"> user </a> > Update Password</span>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6 mt-5">
@@ -48,14 +47,8 @@
 
                         </div>
                     </div>
-                </div> <!-- end col -->
-
+                </div> 
             </div>
         </div>
-
     </main>
 @endsection
-@push('admin-js')
-
-
-@endpush

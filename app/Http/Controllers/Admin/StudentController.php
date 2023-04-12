@@ -9,7 +9,6 @@ use App\Models\CustomField;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\FieldResource;
 use App\Http\Resources\StudentResource;
 
 class StudentController extends Controller

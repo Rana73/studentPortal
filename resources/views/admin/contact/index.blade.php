@@ -7,15 +7,12 @@
     <main>
         <div class="container">
             <div class="heading-title p-2 my-2">
-                <span class="my-3 heading "><i class="fas fa-home"></i> <a class=""
-                        href="{{ route('dashboard') }}">Home</a> >Contact Us Update</span>
+                <span class="my-3 heading "><i class="fas fa-home"></i> <a class="" href="{{ route('dashboard') }}">Home</a> >Contact Us Update</span>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header py-1"><span style="font-size: 14px;
-                                font-weight: 600;
-                                color: #0e2c96;">Edit Product</span> </div>
+                        <div class="card-header py-1"><span style="font-size: 14px;font-weight: 600;color: #0e2c96;">Edit Product</span> </div>
                         <div class="card-body table-card-body my-table">
                             <form action="{{ route('contact-us.update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -225,7 +222,7 @@
 
     @endsection
     @push('admin-js')
-    <!-- modal image -->
+    <!-- image -->
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -241,5 +238,5 @@
         }
         document.getElementById("previewImage").src = "{{ asset($contact->image) }}";
     </script>
-    <!-- close Modal Image -->
+    <!-- close Image -->
     @endpush

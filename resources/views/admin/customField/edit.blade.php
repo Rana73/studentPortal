@@ -7,10 +7,7 @@
                 <span class="my-3 heading "><i class="fas fa-home"></i> <a class="" href="{{ route('dashboard') }}">Home</a> > Update Custom Field</span>
             </div>
             <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-cogs"></i>
-                    Update Custom Field
-                </div>
+                <div class="card-header"><i class="fas fa-cogs"></i>Update Custom Field</div>
                 <div class="card-body table-card-body p-3 mytable-body">
                     <form action="{{ route('custom-field.update', $field->id) }}" method="post">
                         @csrf
@@ -57,7 +54,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </main>
 @endsection

@@ -96,7 +96,6 @@
 
     <script src="{{ asset('admin/js/sweetalert2.all.js') }}"></script>
     <script>
-
         function deleteUser(id) {
             swal({
                 title: 'Are you sure?',

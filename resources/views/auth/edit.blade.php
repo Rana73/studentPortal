@@ -7,16 +7,11 @@
     <main>
         <div class="container ">
             <div class="heading-title p-2 my-2">
-                <span class="my-3 heading "><i class="fas fa-home"></i> <a class=""
-                        href="{{ route('dashboard') }}">Home</a> > Update User</span>
+                <span class="my-3 heading "><i class="fas fa-home"></i> <a  href="{{ route('dashboard') }}">Home</a> > Update User</span>
             </div>
             <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-user-plus"></i>
-                    User Form
-                </div>
+                <div class="card-header"><i class="fas fa-user-plus"></i>User Form</div>
                 <div class="card-body table-card-body p-3 mytable-body">
-
                     <form id="customer_form" action="{{ route('user.update') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
