@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth:institute']] , function(){
             Route::post('/password/update', [InstituteController::class, 'passwordUpdate'])->name('password.update');
     });
 
-    Route::prefix('institute')->group(function(){
+    Route::prefix('student')->group(function(){
         Route::get('/application-list', [ApplicantController::class, 'index'])->name('applicant.index');
         Route::post('/search-applicant', [ApplicantController::class, 'searchResult'])->name('search.applicant');
         Route::post('applicant-update',[ApplicantController::class,'updateRegistration'])->name('applicant.update');

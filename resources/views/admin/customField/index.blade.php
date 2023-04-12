@@ -1,25 +1,42 @@
 @extends('layouts.admin')
-@section('title', 'custom-field Entry')
+@section('title', 'Manage Custom Field')
 @section('admin-content')
     <main class="mb-5">
         <div class="container ">
             <div class="heading-title p-2 my-2">
-                <span class="my-3 heading "><i class="fas fa-home"></i> <a class="" href="">Home</a> > Add custom-field Name</span>
+                <span class="my-3 heading "><i class="fas fa-home"></i> <a class="" href="">Home</a> > Manage Custom Field</span>
             </div>
             <div class="row">
                 <div class="col-md-6 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="table-head"><i class="fas fa-cogs me-1"></i>custom-field Form</div>
+                            <div class="table-head"><i class="fas fa-cogs me-1"></i>Add Custom Field Form</div>
                         </div>
                         <div class="card-body table-card-body p-3">
                             <form action="{{route('custom-field.store')}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <label for="name"> Name <span class="text-danger">*</span> </label>
-                                        <input type="text" name="name" value="{{ old('name') }}" class="form-control custom-form-control form-control-sm shadow-none @error('name') is-invalid @enderror" id="name" placeholder="Enter name">
-                                        @error('name')
+                                        <label for="name"> Select Type <span class="text-danger">*</span> </label>
+                                        <select name="type" value="{{ old('name') }}" class="form-control custom-form-control form-control-sm shadow-none @error('type') is-invalid @enderror" id="type">
+                                            <option value="" selected disabled>Select One</option>
+                                            <option value="text" {{old('type') == 'text' ? 'selected' : ''}}>String</option>
+                                            <option value="number" {{old('type') == 'number' ? 'selected' : ''}}>Number</option>
+                                            <option value="boolean" {{old('type') == 'boolean' ? 'selected' : ''}}>CheckBox</option>
+                                            <option value="date" {{old('type') == 'date' ? 'selected' : ''}}>Date</option>
+                                        </select>
+                                        @error('type')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
+                                        <label for="title"> title <span class="text-danger">*</span> </label>
+                                        <input type="text" name="title" value="{{ old('title') }}" class="form-control custom-form-control form-control-sm shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter title">
+                                        @error('title')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -34,7 +51,7 @@
                 <div class="col-md-6 col-12 mt-md-0 mt-2">
                     <div class="card">
                         <div class="card-header">
-                            <div class="table-head"><i class="fas fa-table me-1"></i>custom-field List</div>
+                            <div class="table-head"><i class="fas fa-table me-1"></i>Custom Field List</div>
                         </div>
                         <div class="card-body table-card-body p-3">
                             <table id="datatablesSimple">
