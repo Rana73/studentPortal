@@ -67,7 +67,7 @@
                                         <input type="{{ $item->type == 'boolean' ? 'checkbox' : $item->type }}" name="{{ $item->title}}" value="{{ old($item->title) }}" class="form-control custom-form-control form-control-sm shadow-none" placeholder="Enter {{$item->title}}">                                      
                                         @else
                                         <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="1" id="checkbox{{$key}}" name="{{ $item->title}}">
+                                        <input class="form-check-input" type="checkbox" value="Yes" id="checkbox{{$key}}" name="{{ $item->title}}">
                                             <label class="form-check-label" for="checkbox{{$key}}">
                                             {{ $item->title}}
                                             </label>
@@ -113,9 +113,21 @@
                                             <td>{{ $item['email'] }}</td>
                                             <td>{{ $item['phone'] }}</td>
                                             <td class="text-center">
-                                                <a href="{{route('custom-field.edit', $item['id'])}}" class="btn btn-edit"><i class="fas fa-pencil-alt"></i></a>
+                                                @php
+                                                    $json = json_encode([
+
+                                                            'id'=>$item['id'],
+                                                            'name'=> $item['name'],
+                                                            'class'=>$item['class'],
+                                                            'email'=>$item['email'],
+                                                            'phone'=>$item['phone'],
+                                                            'custom_fields' => $item['custom_fields']
+
+                                                        ]); 
+                                                @endphp
+                                                <a href="" class="btn btn-edit showDetailsData" data-bs-toggle="modal" data-bs-target="#showDetails" data-json="{{ $json }}"><i class="fas fa-eye"></i></a>
                                                 <button type="submit" class="btn btn-delete" onclick="deleteUser({{ $item['id'] }})"><i class="far fa-trash-alt"></i></button>
-                                                <form id="delete-form-{{ $item['id']}}" action="{{route('custom-field.destroy',$item['id'])}}" method="POST" style="display: none;">
+                                                <form id="delete-form-{{ $item['id']}}" action="{{route('student.destroy',$item['id'])}}" method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
@@ -134,9 +146,73 @@
             </div>
         </div>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="showDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="showDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-2">
+                    <div class="row"> 
+                        <div class="center"><img src="{{asset('profile.png')}}" class="rounded-circle profile-image" alt="..."></div>
+                        <h6 class="mt-3"><i>Academic Information</i></h6>     
+                        <table class="table table-bordered table-striped table-sm profile-table" id="profileData">
+                        <tbody>
+                            <tr>
+                                <th width="30%">Name <span class="float-right">:</span></th>
+                                <td id="txtName"></td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Class <span class="float-right">:</span></th>
+                                <td id="txtClass"></td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Phone <span class="float-right">:</span></th>
+                                <td id="txtPhone"></td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Email <span class="float-right">:</span></th>
+                                <td id="txtEmail"></td>
+                            </tr>
+                        </tbody>
+                        </table>   
+                        <h6><i>Others Information</i></h6>                       
+                        <table class="table table-bordered table-striped table-sm profile-table">
+                            <tbody id="appendData">
+
+                            </tbody>
+                        </table>                                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- close modal -->
 @endsection
 @push('admin-js')
+<script>
+  $(document).on("click",'.showDetailsData',function(){
+    let record = $(this).data('json');
+    $("#profileData").find('#txtName').text(record.name);
+    $("#profileData").find('#txtClass').text(record.class);
+    $("#profileData").find('#txtPhone').text(record.phone);
+    $("#profileData").find('#txtEmail').text(record.email);
+    $('#appendData').empty();
 
+    var tbl = '';
+    $.each(record.custom_fields, function(index, value) {
+        console.log('dataa',value.title)
+        tbl+='<tr>';
+            tbl+='<th width="30%">'+value.title+'<span class="float-right">:</span></th>';
+            tbl+='<td>'+value.value+'</td>';
+        tbl+='</tr>';
+    });
+
+    $('#appendData').append(tbl);
+  });
+
+</script>                                                        
     <script src="{{ asset('admin/js/sweetalert2.all.js') }}"></script>
     <script>
 

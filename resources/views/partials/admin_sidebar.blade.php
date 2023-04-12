@@ -13,7 +13,7 @@
                     Dashboard
                 </a>
                 <a class="nav-link {{ $prefix == 'student' ? '' : 'collapsed' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="{($prefix == 'student')?'true':'false'}}" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-wrench"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-school"></i></div>
                         Student Module
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>

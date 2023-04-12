@@ -22,14 +22,14 @@
                 <div class="col">
                     <div class="card dashboard-card" style="background-color: #165669;">
                         <div class="card-body">
-                            <a href="" style="text-decoration:none">   
+                            <a href="{{route('student.index')}}" style="text-decoration:none">   
                                 <div class="text-center">
                                     <button type="button" class="btn position-relative" style="background-color:white">
-                                        <i class="fas fa-search text-secondary" style="font-size: 18px"></i>
+                                        <i class="fas fa-user-graduate" style="font-size: 18px"></i>
                                     </button>
                                 </div>                         
-                                <div class="dashboard-title">
-                                   Application Lists
+                                <div class="dashboard-title">                                 
+                                Manage Students                              
                                 </div>
                             </a>
                         </div>                  

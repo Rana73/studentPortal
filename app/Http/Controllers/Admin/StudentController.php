@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
+use App\Models\Field;
 use App\Models\Student;
 use App\Models\CustomField;
 use Illuminate\Http\Request;
@@ -24,7 +26,7 @@ class StudentController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+     
         $request->validate([
             'class' => 'required|max:100',
             'name' => 'required|max:100',
@@ -32,11 +34,25 @@ class StudentController extends Controller
             'phone' => 'required|max:11|min:11|unique:students'
         ]);
 
-        $custom_fields = $request->except(['name', 'email', 'phone', 'class']);
-        dd($custom_fields);
         try {
             DB::beginTransaction();
-
+            $student = new Student();
+            $student->institute_id = Auth::guard('institute')->user()->id;
+            $student->name = $request->name;
+            $student->class = $request->class;
+            $student->email = $request->email;
+            $student->phone = $request->phone;
+            $student->save();           
+            $custom_fields = $request->except(['name', 'email', 'phone', 'class','_token']);
+            foreach($custom_fields as $key=>$item){
+                if($item != null){
+                    $field = new Field();
+                    $field->student_id = $student->id;
+                    $field->title = str_replace("_", " ", $key);
+                    $field->value = $item;
+                    $field->save();
+                }            
+            }
             DB::commit();
             return back()->with('success', 'Successfully Inserted');
         } catch (\Throwable $th) {
@@ -45,4 +61,10 @@ class StudentController extends Controller
         }
 
     }
+
+    public function destroy($id){
+        Student::find($id)->delete();
+        return back()->with('success', 'Successfully Deleted'); 
+    }
 }
+

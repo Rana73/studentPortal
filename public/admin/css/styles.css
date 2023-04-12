@@ -11396,3 +11396,10 @@ tr{
 #printable_table{
   display: none;
 }
+.profile-image{
+  height:80px;
+  width:auto;
+}
+.profile-table{
+  font-size: 14px;
+}
