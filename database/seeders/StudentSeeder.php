@@ -22,6 +22,7 @@ class StudentSeeder extends Seeder
          $data = json_decode($jsonString, true);
          foreach ($data as $d) {
              $student = [];
+             $student['institute_id'] = $d['institute_id'];
              $student['email'] = $d['email'];
              $save_data = $d;
              unset($save_data['fields']);

@@ -1,6 +1,6 @@
 [
     {
-        "class": "class - 18", "name": "Md Rana Miah", "email": "mahmudrana21@gmail.com","phone": "01777664786", "status": "1",
+        "institute_id":"1", "class": "class - 18", "name": "Md Rana Miah", "email": "mahmudrana21@gmail.com","phone": "01777664786", "status": "1",
         "fields":[
             { "title": "Shift", "value": "2nd"},
             { "title": "Birth_Date", "value": "14-11-1997"},  
@@ -8,7 +8,7 @@
         ]
     },
     {
-        "class": "class - 13", "name": "Eithe Akter", "email": "eithe@gmail.com", "phone": "01309929514", "status": "2",
+        "institute_id":"2", "class": "class - 13", "name": "Eithe Akter", "email": "eithe@gmail.com", "phone": "01309929514", "status": "2",
         "fields":[
             { "title": "Shift", "value": "2nd"},
             { "title": "Birth_Date", "value": "14-11-2003"},  

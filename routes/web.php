@@ -4,6 +4,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\InstituteController;
 use App\Http\Controllers\Admin\CustomFieldController;
@@ -28,11 +29,11 @@ Route::group(['middleware' => ['auth:institute']] , function(){
     });
 
     Route::prefix('student')->group(function(){
-        Route::get('/application-list', [ApplicantController::class, 'index'])->name('applicant.index');
-        Route::post('/search-applicant', [ApplicantController::class, 'searchResult'])->name('search.applicant');
-        Route::post('applicant-update',[ApplicantController::class,'updateRegistration'])->name('applicant.update');
-        Route::get('/edit-application/{id}',[ApplicantController::class,'edit']);
-
+        Route::get('/student-entry', [StudentController::class, 'index'])->name('student.index');
+        Route::post('/student-store', [StudentController::class, 'store'])->name('student.store');
+        Route::put('/student-update/{id}',[StudentController::class,'update'])->name('student.update');
+        Route::get('/edit-student/{id}',[StudentController::class,'edit'])->name('student.edit');
+        Route::delete('/student-delete/{id}',[StudentController::class,'destroy'])->name('student.destroy');
     });
 
     Route::prefix('setup')->group(function(){

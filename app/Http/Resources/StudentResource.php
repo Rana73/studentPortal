@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Field;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class StudentResource extends JsonResource
@@ -23,6 +24,11 @@ class StudentResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'status' => $this->status,
+            'custom_fields' => $this->customField()
         ];
+    }
+    public function customField(){
+        $data = Field::where('student_id',$this->id)->get();
+        return $data->toArray();
     }
 }

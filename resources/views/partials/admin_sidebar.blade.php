@@ -12,15 +12,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link {{ $prefix == 'student' ? '' : 'collapsed' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="{($prefix == 'student')?'true':'false'}}" aria-controls="collapseLayouts">
+                <a class="nav-link {{ $prefix == 'student' ? '' : 'collapsed' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="{($prefix == 'student')?'true':'false'}}" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-wrench"></i></div>
                         Student Module
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
 
-                <div class="collapse {{ $prefix == 'student' ? 'collapse show' : '' }}" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse {{ $prefix == 'student' ? 'collapse show' : '' }}" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link {{ $route == 'custom-field.index' ? 'active' : '' }}" href="{{ route('custom-field.index') }}"><i class="fas fa-angle-right"></i>&nbsp;Manage Students</a>
+                    <a class="nav-link {{ $route == 'student.index' ? 'active' : '' }}" href="{{ route('student.index') }}"><i class="fas fa-angle-right"></i>&nbsp;Manage Students</a>
                         
                     </nav>
                 </div>
