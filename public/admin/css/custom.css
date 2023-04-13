@@ -240,6 +240,7 @@ main {
 }
 /*close scroll bar*/
 
+/*Custom CSS*/
 .dashboard-card{
   color:#000;
   background-color: white;
@@ -329,6 +330,129 @@ main {
     margin-top: 5px;
 }
 
+.heading-title {
+  background: #ccddef;
+  font-weight: 500;
+  font-size: 14px;
+}
+.heading-title a {
+  text-decoration: none;
+}
+.profile-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+}
+.dashboard-card {
+  border: none;
+  box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  padding: 10px;
+}
+.dashboard-card-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.dashboard-icon {
+  padding: 20px;
+  border-radius: 100%;
+  border: 1px solid #ccc;
+}
+.dashboard-icon{
+  font-size: 18px;
+}
+.dashboard-date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+  letter-spacing: 1px;
+}
+.common-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+.btn-addnew{
+  padding: 0.20rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #1C3C72;
+  border-color: #1C3C72;
+  transition: .3s;
+}
+.btn-print{
+  padding: 1px 4px;
+  background-color: green;
+  border: none;
+  color: #fff;
+  font-size: 10px;
+}
+.btn-print:hover{
+   color: #fff;
+}
+.btn-edit{
+  padding: 1px 4px;
+  background-color: #20B2AA;
+  border-color: #20B2AA;
+  color: #fff;
+  font-size: 10px;
+}
+.btn-edit:hover {
+  background-color: #fff;
+  border-color: #20B2AA;
+  color: #20B2AA;
+}
+.btn-delete{
+  padding: 1px 4px;
+  background-color: #FF0000;
+  border-color: #FF0000;
+  color: #fff;
+  font-size: 10px;
+}
+.btn-delete:hover {
+  background-color: #fff;
+  border-color: #FF0000;
+  color: #FF0000;
+}
+.btn-addnew:hover {
+  color: #fff;
+}
+.table-head {
+  font-size: 15px;
+    font-weight: 500;
+}
+.login-page {
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/login-bg4.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+.login-form {
+  background-color: #fff;
+}
+
+
+label{
+  margin-bottom: 0px;
+}
+input{
+  margin-bottom: 0px;
+}
+tr{
+  vertical-align: middle;
+}
+#printable_table{
+  display: none;
+}
+.profile-image{
+  height:80px;
+  width:auto;
+}
+.profile-table{
+  font-size: 14px;
+}
 @media(max-width:767px){
     .company-name{
         font-size: 25px;
